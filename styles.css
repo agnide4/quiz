@@ -1,0 +1,25 @@
+.container{
+    border-color: brown;
+    border-style: solid;
+    box-sizing: content-box;
+}
+
+.header{
+    background-color: cyan;
+    width: auto;
+    height: 2;
+}
+
+.body{
+    border-style: dotted;
+    border-color: yellowgreen;
+    height: 6in;
+    display: flex;
+    flex-direction: row;
+}
+
+.content{
+    border-style: double;
+    border-color: purple;
+    width: 8in;
+}
