@@ -10,6 +10,13 @@ function getName(){
     return player;        
 }
 
+function showQuiz(){
+    quiz.innerHTML = questions.q1;
+
+
+
+}
+
 let questions = {
     q1: "When a user views a page containing a JavaScript program, which machine actually executes the script?",
     q2: "When a user views a page containing a JavaScript program, which machine actually executes the script?",
