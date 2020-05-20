@@ -50,32 +50,40 @@ let questions = [
 
 ]
 
+$(sbutton).on('click', showQuiz);
+
+
 //Function to show questions in HTML
 let lastQindex = questions.length - 1;
 let currQindex = 0;
 
+let ans = "";
+function isclicked(){
+        if (choiceA.button.isclicked == true){
+            alert("am clicked");
+        ans = q.choiceA;
+        console.log(ans);
+    }
+}
 
 function showQuiz(){
     
     let q = questions[currQindex];
-    while (currQindex<lastQindex){
+    let ans = "";
     ask.innerHTML = "<p>" + q.ask + "</p>";
-    choiceA.innerHTML = "<button>" + q.choiceA + "</button>";
+    choiceA.innerHTML = "<button onclick='isclicked();'>" + q.choiceA + "</button>";
     choiceB.innerHTML = "<button>" + q.choiceB + "</button>";
     choiceC.innerHTML = "<button>" + q.choiceC + "</button>";
-    choiceD.innerHTML = "<button>" + q.choiceD + "</button>";
-
-    }
-    
-    currQindex ++;
-    
+    choiceD.innerHTML = "<button>" + q.choiceD + "</button>";   
     
 }
 
+
+
+
+let score = 0;
 function checkAnswer(){
-    let score = 0;
-    if (q.answer === q.isCorrect){
-        console.log(q.answer);
+        if (answer === isCorrect){
         document.getElementsByClassName("result").innerHTML = "You are correct";
         score += 1;
         document.getElementById("score").innerHTML = "Total point is:" + score;
@@ -86,7 +94,16 @@ function checkAnswer(){
     
 }
 
-showQuiz();
+function quizFlow(){
+    if (currQindex<lastQindex){
+        currQindex++;
+        showQuiz();
+    }else {
+        document.getElementById("score").innerHTML = "Your total score is" + score;
+    }
+}
+
+//showQuiz();
 
 
 
