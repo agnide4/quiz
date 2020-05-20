@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <title>Samir Quiz Yard</title>
 </head>
@@ -23,7 +25,17 @@
             <div class="content">
                 
                 <button type="button" id="start">START</button>
-                <div class="quiz-container" id="qContainer" ></div>
+                <div class="quiz-container" id="qContainer">
+                    <div class ="question"></div>
+                    <div class = "answer" id="A"></div>
+                    <div class = "answer" id="B"></div>
+                    <div class = "answer" id="C"></div>
+                    <div class = "answer" id="D"></div> 
+
+                </div>
+            </div>
+            <div class = "result">
+                <p id="score"></p>
             </div>
             <div class="timer"></div>
         </div>
