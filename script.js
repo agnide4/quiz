@@ -4,13 +4,14 @@
 //Variables declarations
 let sbutton = document.getElementById("start");
 let quiz = document.getElementById("qContainer");
-let ask = document.getElementsByClassName("question");
+let ask = document.getElementById("question");
 let choiceA = document.getElementById("A");
 let choiceB = document.getElementById("B");
 let choiceC = document.getElementById("C");
 let choiceD = document.getElementById("D");
 let answer = document.getElementsByClassName("answer");
 let name = "";
+console.log(ask);
 
 //Questions
 let questions = [
@@ -34,7 +35,7 @@ let questions = [
         ask:"If para1 is the DOM object for a paragraph, what is the correct syntax to change the text within the paragraph?",
         choiceA: "'New Text?' ",
         choiceB: " para1.value ='New Text;' ",
-        choiceC:" para1.firstChild.nodeValue= 'New Text'; ",
+        choiceC: "para1.firstChild.nodeValue= 'New Text'; ",
         choiceD: "para1.nodeValue='New Text';",
         isCorrect: "para1.nodeValue='New Text';"
     },
@@ -57,17 +58,24 @@ let currQindex = 0;
 function showQuiz(){
     
     let q = questions[currQindex];
+    while (currQindex<lastQindex){
     ask.innerHTML = "<p>" + q.ask + "</p>";
-    choiceA.innerHTML = q.choiceA;
-    choiceB.innerHTML = q.choiceB;
-    choiceC.innerHTML = q.choiceC;
-    choiceD.innerHTML = q.choiceD;
+    choiceA.innerHTML = "<button>" + q.choiceA + "</button>";
+    choiceB.innerHTML = "<button>" + q.choiceB + "</button>";
+    choiceC.innerHTML = "<button>" + q.choiceC + "</button>";
+    choiceD.innerHTML = "<button>" + q.choiceD + "</button>";
+
+    }
+    
+    currQindex ++;
+    
     
 }
 
 function checkAnswer(){
     let score = 0;
-    if (answer === q.isCorrect){
+    if (q.answer === q.isCorrect){
+        console.log(q.answer);
         document.getElementsByClassName("result").innerHTML = "You are correct";
         score += 1;
         document.getElementById("score").innerHTML = "Total point is:" + score;
@@ -78,6 +86,7 @@ function checkAnswer(){
     
 }
 
+showQuiz();
 
 
 
