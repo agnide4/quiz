@@ -59,8 +59,8 @@ let currQindex = 0;
 
 let ans = "";
 function isclicked(){
-        if (choiceA.button.isclicked == true){
-            alert("am clicked");
+        if (choiceA.button == true){
+        alert("am clicked");
         ans = q.choiceA;
         console.log(ans);
     }
@@ -71,11 +71,16 @@ function showQuiz(){
     let q = questions[currQindex];
     let ans = "";
     ask.innerHTML = "<p>" + q.ask + "</p>";
-    choiceA.innerHTML = "<button onclick='isclicked();'>" + q.choiceA + "</button>";
+    choiceA.innerHTML = "<button>" + q.choiceA + "</button>";
     choiceB.innerHTML = "<button>" + q.choiceB + "</button>";
     choiceC.innerHTML = "<button>" + q.choiceC + "</button>";
     choiceD.innerHTML = "<button>" + q.choiceD + "</button>";   
     
+}
+choiceA.addEventListener('click', myfunction);
+
+function myfunction(){
+    alert("Am here");
 }
 
 
