@@ -11,10 +11,19 @@ let choiceC = document.getElementById("C");
 let choiceD = document.getElementById("D");
 let answer = document.getElementsByClassName("answer");
 let name = "";
-console.log(ask);
+
 
 //Questions
 let questions = [
+
+    {
+        ask: "What is the meaning of JS",
+        choiceA: "John Smith",
+        choiceB: "Jason Staton",
+        choiceC: "Julius Ceasar",
+        choiceD: "Javascript",
+        isCorrect: "Javascript"
+    },  
     {
         ask: "When a user views a page containing a JavaScript program, which machine actually executes the script?",
         choiceA: "The User's machine running a Web browser",
@@ -29,18 +38,10 @@ let questions = [
         choiceB: "Server",
         choiceC: "Object",
         choiceD: "None of the Above",
-        isCorrect: "client"
+        isCorrect: "Client"
     },
 
-    
-    {
-        ask: "What is the correct form to link HTML to JS file?",
-        choiceA: "<script href = 'formValidation.js'>",
-        choiceB: "<script source = 'formValidation.js'>",
-        choiceC: "<script name = 'formValidation.js'>",
-        choiceD: "<script src = 'formValidation.js'>",
-        isCorrect: "<script src = 'formValidation.js'>"
-    },
+        
     {
         ask:"If para1 is the DOM object for a paragraph, what is the correct syntax to change the text within the paragraph?",
         choiceA: "New Text?",
@@ -59,14 +60,14 @@ $(sbutton).on('click', showQuiz);
 
 //Function to show questions in HTML
 let lastQindex = questions.length - 1;
+console.log(lastQindex);
 let currQindex = 0;
 let ans = "";
 
 
 
 function showQuiz(){
-    
-    let q = questions[currQindex];
+    let q = questions[currQindex];    
     
     ask.innerHTML = "<p>" + q.ask + "</p>";
     choiceA.innerHTML = "<button>" + q.choiceA + "</button>";
@@ -100,7 +101,7 @@ function checkAnswer(){
         console.log(ans);
         if (ans == questions[currQindex].isCorrect){
         document.getElementById("result").innerHTML = "<h3>You are correct </h3>";
-        score += 1;
+        score++;
         document.getElementById("score").innerHTML = "<h6>You current score is:</h4>" + score;
     } else {
         document.getElementById("result").innerHTML = "<h3>Need to study more</h3>";
@@ -132,10 +133,10 @@ function quizFlow(){
 
 
 
-function getName(){
-    let player = prompt("Please enter your name");
-    return player;        
-}
+//function getName(){
+   // let player = prompt("Please enter your name");
+   // return player;        
+//}//
 
 
 
